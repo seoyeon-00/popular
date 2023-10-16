@@ -17,7 +17,7 @@ const CommentItem = ({ parentId, comment, date }: Props) => {
 
   const getFeedData = async (id: string) => {
     try {
-      const response = await fetch(`http://34.22.81.36:3000/feeds/info/${id}`);
+      const response = await fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/feeds/info/${id}`);
       const data = await response.json();
       setFeedTitle(data.title);
       setBoard(data.board as BoardTypes);

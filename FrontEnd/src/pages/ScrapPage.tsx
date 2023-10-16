@@ -14,7 +14,7 @@ const ScrapPage = () => {
   const [stores, setStores] = useState<Store[]>([]);
 
   const fetchStore = async (storeId: string) => {
-    const res = await fetch(`http://34.22.81.36:3000/stores/store/${storeId}`);
+    const res = await fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/stores/store/${storeId}`);
     const data = await res.json();
     return data;
   };
@@ -23,7 +23,7 @@ const ScrapPage = () => {
 
   const getStoreData = async () => {
     if (userData) {
-      const res = await fetch(`http://34.22.81.36:3000/users/${userData._id}/scraps`);
+      const res = await fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/users/${userData._id}/scraps`);
       const storeIdData = await res.json();
       const storeData = await Promise.all(
         storeIdData.map((id: string) => {

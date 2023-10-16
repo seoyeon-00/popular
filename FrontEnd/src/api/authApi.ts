@@ -4,7 +4,7 @@ import { User } from '../types/user';
 
 export const getToken = async ({ email, pw }: { email: string; pw: string }) => {
   const response = await (
-    await fetch('http://34.22.81.36:3000/auth/login', {
+    await fetch('https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/auth/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

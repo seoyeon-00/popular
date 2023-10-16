@@ -7,7 +7,8 @@ export async function handleImages(
 
 	for (let imgData of base64Images) {
 		const targetDir = '/uploads';
-		const imagePublicUrlBase = 'http://34.22.81.36:3000';
+		const imagePublicUrlBase =
+			'https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/';
 		const imageUrl = await handleImage(imgData, targetDir, imagePublicUrlBase);
 
 		imageMapping[imgData] = imageUrl;

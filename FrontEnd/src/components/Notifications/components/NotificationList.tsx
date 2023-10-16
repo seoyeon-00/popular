@@ -17,13 +17,16 @@ const NotificationList = () => {
 
   const getUserNotification = async () => {
     if (userData) {
-      const res = await fetch(`http://34.22.81.36:3000/notifications/user/${userData._id}`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${localStorage.getItem('token')}`,
+      const res = await fetch(
+        `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/notifications/user/${userData._id}`,
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
         },
-      });
+      );
       const data = await res.json();
       setNotifications(data.reverse());
       setIsLoading(false);

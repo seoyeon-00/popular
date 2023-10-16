@@ -13,9 +13,12 @@ const getFeeds = async (
   offset = 1,
   userId: string | undefined,
 ): Promise<{ rows: Post[]; nextOffset: number; hasNextPage: boolean }> => {
-  const res = await fetch(`http://34.22.81.36:3000/feeds/user/${userId}?pageIndex=${offset}`, {
-    method: 'GET',
-  });
+  const res = await fetch(
+    `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/feeds/user/${userId}?pageIndex=${offset}`,
+    {
+      method: 'GET',
+    },
+  );
   const data = await res.json();
   const rows: Post[] = data.docs; // length: 한번에 불러오는 데이터 수
   await new Promise((r) => setTimeout(r, 500));

@@ -16,7 +16,10 @@ const getComments = async (
   userId: string,
 ): Promise<{ rows: Comment[]; nextOffset: number; hasNextPage: boolean }> => {
   try {
-    const res = await callApi('GET', `http://34.22.81.36:3000/comments/user/${userId}?pageIndex=${offset}`);
+    const res = await callApi(
+      'GET',
+      `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/comments/user/${userId}?pageIndex=${offset}`,
+    );
     const data = await res.json();
     const rows: Comment[] = data.docs; // length: 한번에 불러오는 데이터 수
     await new Promise((r) => setTimeout(r, 500));

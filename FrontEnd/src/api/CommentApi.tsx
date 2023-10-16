@@ -11,7 +11,9 @@ type postCommentBody = {
 };
 
 export const getComments = async (postId = '', setComments: (comments: Comment[]) => void) => {
-  const response = await (await fetch(`http://34.22.81.36:3000/feeds/${postId}/comments`)).json();
+  const response = await (
+    await fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/feeds/${postId}/comments`)
+  ).json();
   setComments(response);
 };
 

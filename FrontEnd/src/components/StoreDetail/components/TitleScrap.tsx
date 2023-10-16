@@ -41,13 +41,16 @@ const TitleScrap = React.memo(({ store }: Props) => {
 
   const scrapMutation = useMutation(
     () => {
-      return fetch(`http://34.22.81.36:3000/users/${user._id}/scrapStore/${store._id}`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: `Bearer ${localStorage.getItem('token')}`,
+      return fetch(
+        `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/users/${user._id}/scrapStore/${store._id}`,
+        {
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            authorization: `Bearer ${localStorage.getItem('token')}`,
+          },
         },
-      });
+      );
     },
     {
       onError: () => {
@@ -57,13 +60,16 @@ const TitleScrap = React.memo(({ store }: Props) => {
   );
 
   const unscrapMutation = useMutation(() => {
-    return fetch(`http://34.22.81.36:3000/users/${user._id}/unscrapStore/${store._id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Bearer ${localStorage.getItem('token')}`,
+    return fetch(
+      `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/users/${user._id}/unscrapStore/${store._id}`,
+      {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
       },
-    });
+    );
   });
 
   function scrapHandler() {

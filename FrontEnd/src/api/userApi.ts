@@ -26,7 +26,7 @@ export const deleteUsers = async (userIds: string[]): Promise<void> => {
 
 export const getLoginUser = async () => {
   try {
-    const response = await fetch('http://34.22.81.36:3000/auth/profile', {
+    const response = await fetch('https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/auth/profile', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
