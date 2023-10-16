@@ -44,7 +44,7 @@ const LoginForm = () => {
 
     const fetchLogin = async (email: string, password: string) => {
       try {
-        const response = await fetch('http://34.22.81.36:3000/auth/login', {
+        const response = await fetch('https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/auth/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

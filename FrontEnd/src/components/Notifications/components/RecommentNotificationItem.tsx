@@ -16,7 +16,7 @@ interface Props {
 
 const handleChecked = async (checked: boolean, id: string) => {
   if (!checked) {
-    fetch(`http://34.22.81.36:3000/notifications/${id}`, {
+    fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/notifications/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -29,7 +29,7 @@ const handleChecked = async (checked: boolean, id: string) => {
 };
 
 const RemoveNotification = async (id: string) => {
-  fetch(`http://34.22.81.36:3000/notifications/${id}`, {
+  fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/notifications/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ const RecommentNotificationItem = ({ id, recommentData, board, checked }: Props)
 
   const getFeedId = async (commentId: string) => {
     try {
-      const res = await fetch(`http://34.22.81.36:3000/comments/info/${commentId}`);
+      const res = await fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/comments/info/${commentId}`);
       const data = await res.json();
       if (data.ancestor) setFeedId(data.ancestor.id);
     } catch (err: any) {

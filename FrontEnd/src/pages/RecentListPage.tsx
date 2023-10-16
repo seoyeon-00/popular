@@ -20,7 +20,9 @@ const RecentListPage = () => {
     if (array) {
       for (const item of array) {
         try {
-          const response = await fetch(`http://34.22.81.36:3000/stores/store/${item._id}`);
+          const response = await fetch(
+            `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/stores/store/${item._id}`,
+          );
           if (response.ok) {
             storageStores.push(item);
           }

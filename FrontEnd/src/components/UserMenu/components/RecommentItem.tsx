@@ -19,7 +19,7 @@ const RecommentItem = ({ parentId, recomment, date }: Props) => {
 
   const getParentData = async (parentCommentId: string) => {
     try {
-      const res = await fetch(`http://34.22.81.36:3000/comments/${parentCommentId}`);
+      const res = await fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/comments/${parentCommentId}`);
       const data = await res.json();
       setParentComment(data.content);
       setParentFeedTitle(data.parent?.id.title);

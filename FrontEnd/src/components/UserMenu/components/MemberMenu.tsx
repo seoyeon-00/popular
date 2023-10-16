@@ -24,7 +24,7 @@ const MemberMenu = () => {
 
   const fetchDeleteUser = (userId: string) => {
     try {
-      callApi('DELETE', `http://34.22.81.36:3000/users/${userId}`);
+      callApi('DELETE', `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/users/${userId}`);
     } catch (err: any) {
       throw new Error(err);
     }

@@ -18,7 +18,10 @@ const UserProfile = () => {
   const userData = useSelector((state: RootState) => state.UserSlice.user);
 
   const checkNotification = async (userId: string) => {
-    const response = await callApi('GET', `http://34.22.81.36:3000/notifications/user/${userId}`);
+    const response = await callApi(
+      'GET',
+      `https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/notifications/user/${userId}`,
+    );
     const data: Notification[] = await response.json();
     const newNotification = data.find((item: Notification) => !item.checked);
     if (userData?.allow_notification && newNotification) {

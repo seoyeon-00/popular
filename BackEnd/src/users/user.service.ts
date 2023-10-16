@@ -96,7 +96,7 @@ export class UserService {
 			const imageUrl = await handleImage(
 				base64Image,
 				'/uploads',
-				'http://34.22.81.36:3000',
+				'https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/',
 			);
 
 			user.profile = imageUrl;

@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://34.22.81.36:3000';
+const API_BASE_URL = 'https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app';
 
 export const API_PATH = {
   STORE: {

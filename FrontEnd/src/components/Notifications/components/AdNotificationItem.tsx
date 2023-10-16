@@ -11,7 +11,7 @@ interface Props {
 
 const handleChecked = async (checked: boolean, id: string) => {
   if (!checked) {
-    fetch(`http://34.22.81.36:3000/notifications/${id}`, {
+    fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/notifications/${id}`, {
       method: 'PATCH',
       headers: {
         'content-type': 'application/json',
@@ -24,7 +24,7 @@ const handleChecked = async (checked: boolean, id: string) => {
 };
 
 const RemoveNotification = async (id: string) => {
-  fetch(`http://34.22.81.36:3000/notifications/${id}`, {
+  fetch(`https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/notifications/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json',

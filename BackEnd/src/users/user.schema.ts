@@ -41,7 +41,10 @@ export class User extends Document {
 	@Prop({ default: [] })
 	interested_category: string[];
 
-	@Prop({ default: 'http://34.22.81.36:3000/uploads/defaultProfile.svg' })
+	@Prop({
+		default:
+			'https://port-0-popular-6w1j2allzfh0gg.sel5.cloudtype.app/uploads/defaultProfile.svg',
+	})
 	profile: string;
 
 	@Prop({ default: '한 줄 소개를 넣어주세요!' })
