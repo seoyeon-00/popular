@@ -81,7 +81,8 @@ const SearchBox = ({ searchRef, map, setCenter }: Props) => {
   };
 
   async function searchAddress(query: string) {
-    const apiKey = 'd0acc39482dfa41bbde29b60461a86ed'; // 카카오 개발자 웹사이트에서 발급한 API 키를 입력합니다.
+    //const apiKey = 'd0acc39482dfa41bbde29b60461a86ed'; // 카카오 개발자 웹사이트에서 발급한 API 키를 입력합니다.
+    const apiKey = '	4c9b66cd7500741bb8360b7e3401ddf1';
 
     const url = 'https://dapi.kakao.com/v2/local/search/address.json';
     const headers = { Authorization: `KakaoAK ${apiKey}` };
