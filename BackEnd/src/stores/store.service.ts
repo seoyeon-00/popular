@@ -95,9 +95,9 @@ export class StoreService {
 		}
 
 		const storeImages = body.images;
-		const images = storeImages.filter(image => image.startsWith('http://'));
+		const images = storeImages.filter(image => image.startsWith('https://'));
 		const filteredImages = storeImages.filter(
-			image => !image.startsWith('http://'),
+			image => !image.startsWith('https://'),
 		);
 
 		const imageMapping = await handleImages(filteredImages);
