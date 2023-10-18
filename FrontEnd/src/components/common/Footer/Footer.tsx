@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const Contour = styled.div`
   height: 100%;
   width: 1px;
-  background-color: #e1e1e1;
+  background-color: #3f3f3f;
 
   @media all and (max-width: 1024px) {
     width: 100%;
@@ -16,7 +16,7 @@ const Container = styled.footer`
   width: calc(100vw - (100vw - 100%));
   height: 300px;
   padding: 40px calc((100vw - 1024px) / 2);
-  background-color: #f8f8f8;
+  background-color: #282828;
 
   color: #909090;
   font-weight: 300;
@@ -64,7 +64,11 @@ const Container = styled.footer`
     .logo {
       display: flex;
       align-items: center;
-      filter: grayscale(100%);
+      filter: grayscale(100%) brightness(120%);
+
+      img {
+        width: 200px;
+      }
     }
   }
 
@@ -86,7 +90,7 @@ const Container = styled.footer`
       align-items: center;
       width: 100%;
       img {
-        width: 150px;
+        width: 100px;
         margin: 0 auto;
       }
     }
@@ -118,7 +122,7 @@ const Footer = () => {
         <Contour />
         <div className="description-sub">
           <div className="call-center">
-            <p>고객센터 &gt;</p>
+            <p>고객센터</p>
             <div className="phone-number">010-1234-5678</div>
             <div className="call">
               <div className="weekday">
