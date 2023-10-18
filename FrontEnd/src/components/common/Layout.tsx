@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   // Colors
   --color-main: #652cc1;
   --color-sub: #a37edc;
+  --color-pastel: #dcaaf8;
 
   --color-white: #ffffff;
   --color-black: #111111;

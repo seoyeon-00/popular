@@ -102,15 +102,15 @@ const Container = styled.header`
 
         .links {
           display: flex;
-          gap: 40px;
-          font-size: 18px;
+          gap: 30px;
+          font-size: 16px;
 
           a {
             position: relative;
             transition: all 0.5s;
             color: var(--color-light-black);
             background-color: transparent;
-            font-weight: 300;
+            font-weight: 500;
             transform-origin: bottom center;
 
             &:hover {
@@ -119,7 +119,7 @@ const Container = styled.header`
 
             &.active {
               color: var(--color-main);
-              font-weight: 500;
+              font-weight: 700;
               transform: scale(1.2);
             }
           }
@@ -220,7 +220,11 @@ const Header = () => {
         </nav>
         <div className="sub-links">
           <HeaderSearchBox />
-          {user ? <HeaderProfile src={user.profile} /> : <HeaderProfile src="/defaultProfile.svg" />}
+          {user ? (
+            <HeaderProfile src={user.profile} name={user.nickname} />
+          ) : (
+            <HeaderProfile src="/defaultProfile.svg" />
+          )}
         </div>
       </div>
     </Container>

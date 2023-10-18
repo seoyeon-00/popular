@@ -7,8 +7,7 @@ const Container = styled.div`
   position: relative;
 
   input {
-    width: 200px;
-    // width: 40px;
+    width: 150px;
     height: 30px;
 
     padding: 0 30px 0 10px;
@@ -16,27 +15,36 @@ const Container = styled.div`
 
     border-radius: 20px;
     border: 1px solid var(--color-main);
-    // border: 1px solid var(--color-sub);
+    background-color: var(--color-main);
 
     transition: width 0.5s, transform 0.5s;
     transform-origin: right center;
     transform: scale(1.2);
 
-    // &:focus {
-    //   width: 200px;
-    //   outline: none;
-    //   border: 1px solid var(--color-main);
+    &:focus {
+      width: 240px;
+      outline: none;
+      border: 1px solid var(--color-main);
 
-    //   transform: scale(1.2);
-    // }
+      transform: scale(1.2);
+      color: var(--color-pastel);
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  input::placeholder {
+    color: var(--color-pastel);
+    font-size: 12px;
+    font-weight: 500;
   }
 
   svg {
     position: absolute;
-    right: 2px;
+    right: 5px;
     top: 0px;
-    transform: scale(0.6);
-    fill: var(--color-sub);
+    transform: scale(0.5);
+    fill: var(--color-pastel);
 
     &:hover {
       cursor: pointer;
