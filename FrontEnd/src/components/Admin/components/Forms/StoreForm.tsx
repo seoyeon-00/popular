@@ -152,10 +152,17 @@ const StoreForm = ({ defaultData }: Props) => {
     const result = `${roadAddress} ${buildingName}`;
     locationRef.current.value = result;
 
+    // const coordData = await fetch(`https://dapi.kakao.com/v2/local/search/address.json?query=${roadAddress}`, {
+    //   method: 'GET',
+    //   headers: {
+    //     Authorization: 'KakaoAK d0acc39482dfa41bbde29b60461a86ed',
+    //   },
+    // });
+
     const coordData = await fetch(`https://dapi.kakao.com/v2/local/search/address.json?query=${roadAddress}`, {
       method: 'GET',
       headers: {
-        Authorization: 'KakaoAK d0acc39482dfa41bbde29b60461a86ed',
+        Authorization: 'KakaoAK 4c9b66cd7500741bb8360b7e3401ddf1',
       },
     });
 
