@@ -32,11 +32,7 @@ const CategoryItems = ({ catecoryList }: Props) => {
   const currentDate = new Date();
   const sortedCategoryStores = categoryData.filter((store) => {
     const endDate = new Date(store.end_date);
-    return (
-      endDate.getFullYear() >= currentDate.getFullYear() &&
-      endDate.getMonth() >= currentDate.getMonth() &&
-      endDate.getDate() >= currentDate.getDate()
-    );
+    return endDate.getTime() >= currentDate.getTime();
   });
 
   return (
