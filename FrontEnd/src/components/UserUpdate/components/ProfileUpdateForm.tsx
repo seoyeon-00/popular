@@ -158,6 +158,8 @@ const ProfileUpdateForm = ({ user }: Props) => {
 
     try {
       if (!userId) return;
+
+      //console.log(token);
       const response = await fetch(API_PATH.USER.PATCH.replace(':userId', userId), {
         method: 'PATCH',
         headers: {
