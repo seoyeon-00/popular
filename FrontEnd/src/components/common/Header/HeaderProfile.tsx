@@ -2,7 +2,18 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  width: 40px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+`;
+
+const Image = styled.div`
+  width: 35px;
+  height: 35px;
   aspect-ratio: 1/1;
 
   border-radius: 50%;
@@ -16,12 +27,22 @@ const Container = styled.div`
   }
 `;
 
-const HeaderProfile = ({ src }: { src: string }) => {
+const UserName = styled.div`
+  font-weight: 500;
+  font-size: 16px;
+`;
+
+const HeaderProfile = ({ src, name }: { src: string; name?: string }) => {
   return (
     <Container>
-      <Link to="/usermenu">
-        <img src={src} alt="profile" onError={() => 'this.src="/defaultProfile.svg"'} />
-      </Link>
+      <Image>
+        <Link to="/usermenu">
+          <img src={src} alt="profile" onError={() => 'this.src="/defaultProfile.svg"'} />
+        </Link>
+      </Image>
+      <UserName>
+        <Link to="/usermenu">{name}</Link>
+      </UserName>
     </Container>
   );
 };
