@@ -128,7 +128,8 @@ export class UserService {
 			if (body.allow_notification === false) {
 				const notifications = (
 					await this.notificationModel.find({ user_id: user._id })
-				).map(notification => notification._id.toString());
+				).map(notification => notification._id);
+				//).map(notification => notification._id.toString());
 				await this.NotificationsService.deleteNotifications(notifications);
 			}
 		}
