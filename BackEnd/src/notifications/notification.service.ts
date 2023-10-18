@@ -179,7 +179,8 @@ export class NotificationsService {
 			});
 
 			if (notifications.length > 0) {
-				let notificationsToDelete: string[] = [];
+				// let notificationsToDelete: string[] = [];
+				const notificationsToDelete: string[] = [];
 				notifications.forEach(notification => {
 					notificationsToDelete.push(notification.toString());
 				});
