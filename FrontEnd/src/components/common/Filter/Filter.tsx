@@ -4,13 +4,14 @@ const Select = styled.select<{ width: number }>`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url('/chevronDownIcon.png') no-repeat 95% 50%/13px auto;
+  background: url('/chevronDownIcon.png') no-repeat 95% 50%/10px auto;
   ${(props) => `width: ${props.width}%;`}
   height: 39px;
   background-color: var(--color-white);
   border: 2px solid var(--color-sub);
+  color: var(--color-main);
   border-radius: 8px;
-  font-size: var(--font-small);
+  font-size: 13px;
   margin-top: 10px;
   text-align: center;
   font-weight: 700;
