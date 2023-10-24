@@ -120,19 +120,20 @@ const TextBox = styled.div`
   z-index: 5;
 
   .innertext-1 {
-    font-size: var(--font-medium);
+    font-size: 23px;
   }
 
   .innertext-2 {
     margin-top: 7px;
-    font-size: var(--font-medium);
+    font-size: 23px;
     font-weight: var(--weight-semi-bold);
   }
 
   .innertext-3 {
     margin-top: 20px;
-    font-size: var(--font-regular);
-    font-weight: var(--weight-light);
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: -1px;
 
     @media all and (max-width: 767px) {
       display: none;

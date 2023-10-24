@@ -120,7 +120,6 @@ const Container = styled.header`
             &.active {
               color: var(--color-main);
               font-weight: 700;
-              transform: scale(1.2);
             }
           }
         }
