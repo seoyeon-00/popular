@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components';
-
+import PrevArrowIcon from '../Icons/PrevArrowIcon';
+import NextArrowIcon from '../Icons/NextArrowIcon';
 const PageListWrap = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 15px;
+  margin-top: 35px;
 `;
 
 const PageList = styled.ul`
@@ -17,6 +18,10 @@ const PageItem = styled.li<{ active: boolean }>`
   text-align: center;
   margin: 0 3px;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-size: 13px;
+  font-weight: 600;
 
   ${(props) =>
     props.active &&
@@ -28,10 +33,13 @@ const PageItem = styled.li<{ active: boolean }>`
 `;
 
 const MovementButton = styled.button`
-  color: var(--color-gray);
-  background: none;
+  color: var(--color-white);
+  background: #f9f2fe;
   margin: 0 10px;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
 `;
 
 const Pagination = ({
@@ -53,7 +61,9 @@ const Pagination = ({
             setPage(currPage - 1);
           }
         }}
-      >{`< Prev`}</MovementButton>
+      >
+        <PrevArrowIcon />
+      </MovementButton>
       <PageList>
         {pageGroup.map(
           (page) =>
@@ -76,7 +86,9 @@ const Pagination = ({
             setPage(currPage + 1);
           }
         }}
-      >{`Next >`}</MovementButton>
+      >
+        <NextArrowIcon />
+      </MovementButton>
     </PageListWrap>
   );
 };
