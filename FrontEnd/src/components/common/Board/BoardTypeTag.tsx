@@ -31,10 +31,11 @@ const TagContainer = styled.div<{ color: string }>`
   padding: 4px 0;
 
   border-radius: 4px;
+  height: 22px;
 
   color: var(--color-white);
   font-size: var(--font-micro);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-semi-bold);
 
   background-color: ${(props) => props.color};
 `;

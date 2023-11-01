@@ -98,7 +98,7 @@ const PostListItemContainer = () => {
     return <></>;
   }
   return (
-    <PostList>
+    <PostList style={{ marginTop: 30 }}>
       {isFetching ? (
         <></>
       ) : (

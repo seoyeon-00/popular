@@ -11,20 +11,41 @@ const PostItem = ({ post }: Props) => {
   const findImage = post.content;
   const regex = /src="([^"]+)"/;
   const match = findImage.match(regex);
+
+  const contentPreview = () => {
+    const startTag = '<p>';
+    const endTag = '</p>';
+
+    // 첫 번째 <p> 태그의 시작 위치를 찾음
+    const startIndex = post.content.indexOf(startTag);
+    if (startIndex !== -1) {
+      // 시작 위치 이후에서 첫 번째 </p> 태그의 위치를 찾음
+      const endIndex = post.content.indexOf(endTag, startIndex);
+
+      if (endIndex !== -1) {
+        // <p> 태그 안의 텍스트를 추출
+        const text = post.content.slice(startIndex + startTag.length, endIndex);
+
+        return text;
+      }
+    }
+  };
   return (
     <Container key={post._id}>
       <ContainerInner>
         <PostItemInfo>
           <PostItemCategory>
             <BoardTypeTag boardType={post.board} />
+            <BoardTitle>{post.title}</BoardTitle>
           </PostItemCategory>
-          <PostItemTitle>{post.title}</PostItemTitle>
+          <PostItemContent>{contentPreview()}</PostItemContent>
           <PostItemBottom>
-            <span>{dayjs(post.createdAt).format('YYYY-MM-DD')} </span>|
+            <span>{dayjs(post.createdAt).format('YYYY-MM-DD').replace(/-/g, '.')} </span>
             <div className="info">
               {typeof post.author === 'object' ? (
                 <>
-                  <span>{post.author.nickname}</span>|<span>💜 {post.likes.length}</span>
+                  <span>{post.author.nickname}</span>
+                  <span>💜 {post.likes.length}</span>
                 </>
               ) : (
                 `💜 ${post.likes.length > 0 ? post.likes.length : '0'}`
@@ -114,28 +135,18 @@ const PostItemInfo = styled.div`
 `;
 
 const PostItemCategory = styled.div`
-  margin-top: 5px;
   font-size: var(--font-small);
   color: var(--color-light-black);
-`;
 
-const PostItemBottom = styled.div`
   display: flex;
   gap: 10px;
-  margin-top: 10px;
-  font-size: 12px;
-  color: var(--color-gray);
-
-  .info {
-    display: flex;
-    gap: 10px;
-  }
+  align-items: center;
 `;
 
-const PostItemTitle = styled.div`
+const BoardTitle = styled.div`
   max-width: 100%;
   font-size: var(--font-regular);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-semi-bold);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -144,6 +155,35 @@ const PostItemTitle = styled.div`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  color: #111;
+`;
+
+const PostItemBottom = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: var(--color-light-black);
+
+  .info {
+    display: flex;
+    gap: 10px;
+  }
+`;
+
+const PostItemContent = styled.div`
+  max-width: 100%;
+  font-size: var(--font-small);
+  font-weight: var(--weight-regular);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 5px 0px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #a7a7a7;
 
   @media all and (max-width: 767px) {
     font-size: var(--font-small);
