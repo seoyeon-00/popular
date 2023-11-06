@@ -16,15 +16,16 @@ const Container = styled.div`
 
   .store-location-img {
     width: 100%;
-    height: 300px;
+    height: 400px;
     aspect-ratio: 1/1;
     margin-top: 20px;
   }
 
   .store-location-content {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 20px 0 4px 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    margin: 13px 0 4px 0;
 
     word-break: keep-all;
   }
@@ -51,9 +52,9 @@ const InfoPlace = ({ location, coordinates }: Place) => {
 
   return (
     <Container>
-      <p className="store-location-title">오시는 길</p>
-      <div id="store-detail-map" className="store-location-img"></div>
+      <p className="store-location-title">🗺️ 오시는 길</p>
       <p className="store-location-content">{location}</p>
+      <div id="store-detail-map" className="store-location-img"></div>
     </Container>
   );
 };

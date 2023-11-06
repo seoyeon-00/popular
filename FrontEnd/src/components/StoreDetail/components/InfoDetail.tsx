@@ -18,6 +18,7 @@ interface Hours {
 
 const Container = styled.div`
   width: 100%;
+  padding-left: 20px;
 
   .store-detail-info-list {
     display: flex;
@@ -25,26 +26,42 @@ const Container = styled.div`
     width: 100%;
 
     li + li {
-      margin-top: 20px;
+      margin-top: 13px;
     }
   }
 
   .store-detail-title {
     font-size: 18px;
     font-weight: 700;
-    margin-bottom: 20px;
+  }
+
+  .store-detail-sub-text {
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    margin: 13px 0 15px 0;
+  }
+
+  .store-detail-info-item-continer {
+    background-color: #f8f8f8;
+    padding: 4%;
+    border-radius: 10px;
   }
 
   .store-detail-info-item {
     display: flex;
     align-items: center;
+
+    img {
+      width: 22px;
+    }
   }
 
   .item-info {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 500;
-    margin-left: 20px;
-    margin-right: 10px;
+    margin-left: 12px;
+    margin-right: 5px;
   }
 
   .week-btn {
@@ -53,7 +70,11 @@ const Container = styled.div`
     justify-content: center;
     width: 24px;
     height: 24px;
-    background-color: #ffffff;
+    background-color: #f8f8f8;
+
+    img {
+      width: 70%;
+    }
   }
 
   .hours-list {
@@ -121,14 +142,13 @@ const Container = styled.div`
     line-height: 28px;
     text-align: center;
     color: #652cc1;
-    transition: all 0.5s;
+    transition: all 0.2s;
 
     &:hover {
       cursor: pointer;
       background-color: #652cc1;
       color: #fff;
-      transform: translateY(-4px);
-      box-shadow: 0px 6px 12px -3px rgba(0, 0, 0, 0.6);
+      transform: translateY(-2px);
     }
   }
 
@@ -213,34 +233,37 @@ const InfoDetail = ({ store }: Props) => {
   return (
     <Container>
       <ul className="store-detail-info-list">
-        <p className="store-detail-title">운영 정보</p>
-        <li className="store-detail-info-item">
-          <img className="item-ico" src="/images/calendar.svg" alt="" />
-          <p className="item-info">
-            {getPeriod(store.start_date)} ~ {getPeriod(store.end_date)}
-          </p>
-        </li>
-        <li className="store-detail-info-item">
-          <img className="item-ico" src="/images/clock.svg" alt="" />
-          {checkedOpen(store.hours)}
-          <button className="week-btn" onClick={() => setWeek(!week)}>
-            <img
-              src="/images/angle-down.svg"
-              alt=""
-              style={week ? { transform: 'rotate(180deg)' } : { transform: 'rotate(0)' }}
-            />
-          </button>
-        </li>
-        {week && businessHours(store.hours)}
-        <li className="store-detail-info-item">
-          <img className="item-ico" src="/images/place.svg" alt="" />
-          <p className="item-info">{store.location}</p>
-        </li>
-        <li className="store-detail-info-item">
-          <img className="item-ico" src="/images/won.svg" alt="" />
-          <p className="item-info">입장료 {!store.price ? '무료' : `${store.price.toLocaleString()}원`}</p>
-        </li>
-        <div className="store-sns-title">SNS</div>
+        <p className="store-detail-title">🖍️ 운영 정보</p>
+        <p className="store-detail-sub-text">운영정보를 확인하고 방문해주세요.</p>
+        <ul className="store-detail-info-item-continer">
+          <li className="store-detail-info-item">
+            <p>🗓️</p>
+            <p className="item-info">
+              {getPeriod(store.start_date)} ~ {getPeriod(store.end_date)}
+            </p>
+          </li>
+          <li className="store-detail-info-item">
+            <p>🕛</p>
+            {checkedOpen(store.hours)}
+            <button className="week-btn" onClick={() => setWeek(!week)}>
+              <img
+                src="/images/angle-down.svg"
+                alt=""
+                style={week ? { transform: 'rotate(180deg)' } : { transform: 'rotate(0)' }}
+              />
+            </button>
+          </li>
+          {week && businessHours(store.hours)}
+          <li className="store-detail-info-item">
+            <p>📍</p>
+            <p className="item-info">{store.location}</p>
+          </li>
+          <li className="store-detail-info-item">
+            <p>💰</p>
+            <p className="item-info">입장료 {!store.price ? '무료' : `${store.price.toLocaleString()}원`}</p>
+          </li>
+        </ul>
+        <div className="store-sns-title">🍩 SNS</div>
         {store.sns.length > 0 && (
           <>
             <ul className="store-sns-list">

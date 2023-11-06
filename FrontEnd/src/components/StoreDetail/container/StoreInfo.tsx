@@ -24,12 +24,13 @@ const Container = styled.div`
     width: 100%;
     padding: 20px 0;
 
-    font-size: 18px;
-    font-weight: 300;
+    font-size: 17px;
+    font-weight: 400;
+    color: #444;
 
     word-break: keep-all;
     white-space: pre-line;
-    line-height: 1.3;
+    line-height: 1.7;
     letter-spacing: 0.02em;
   }
 
@@ -54,7 +55,7 @@ const Container = styled.div`
   .detail-bottom-btns {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 6px;
     align-items: center;
     width: 100%;
     margin-top: 20px;
@@ -87,7 +88,7 @@ const Container = styled.div`
   .line {
     width: 100%;
     border-bottom: 1px solid #e7e7e7;
-    margin: 20px 0;
+    margin: 20px 0 30px;
   }
 
   // 모바일
