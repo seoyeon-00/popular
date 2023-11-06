@@ -27,7 +27,7 @@ const Container = styled.div<{ isDetail: boolean }>`
     position: absolute;
     bottom: 0;
     width: 50%;
-    height: 2px;
+    height: 3px;
     background-color: var(--color-main);
 
     transition: all 0.3s;
@@ -40,9 +40,14 @@ const Container = styled.div<{ isDetail: boolean }>`
     width: 100%;
     background-color: #ffffff;
     font-weight: 700;
+    color: var(--color-main);
 
     &:hover {
       cursor: pointer;
+    }
+
+    &.active {
+      color: #000;
     }
   }
 

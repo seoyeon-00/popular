@@ -43,7 +43,7 @@ const Container = styled.div`
     height: 100%;
     justify-content: center;
     align-items: center;
-    background-color: rgb(219 219 219);
+    background-color: #ededed;
   }
 
   .title-img {
