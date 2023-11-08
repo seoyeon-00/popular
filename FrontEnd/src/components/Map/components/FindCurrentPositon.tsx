@@ -5,28 +5,29 @@ const Container = styled.button`
   top: 50px;
   left: 50%;
 
-  width: 130px;
-  height: 35px;
+  width: 150px;
+  height: 40px;
 
   text-align: center;
 
-  background-color: var(--color-main);
+  background: #fff;
+  border: 2px solid var(--color-main);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
   z-index: 400;
-  color: var(--color-white);
+  color: var(--color-main);
   font-size: 14px;
   font-weight: 600;
 
-  transform: translateX(-50%);
+  transform: translate(-50%, 0);
 
   transition: all 0.5s;
 
   &:hover {
     cursor: pointer;
 
-    transform: translateX(-50%) scale(1.2);
+    transform: translate(-50%, -3px);
   }
 
   @media all and (max-width: 767px) {

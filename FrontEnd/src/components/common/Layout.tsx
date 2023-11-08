@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   --font-medium: 20px;
   --font-regular: 16px;
   --font-small: 14px;
+  --font-xsmall: 12px;
   --font-micro: 10px;
 
   // Font weight

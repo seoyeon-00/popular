@@ -15,8 +15,8 @@ const Container = styled.div`
   border-radius: 4px;
   background-color: var(--color-main);
 
-  font-size: 12px;
-  font-weight: var(--weight-semi-bold);
+  font-size: 10px;
+  font-weight: 600;
   color: var(--color-white);
 
   text-align: center;

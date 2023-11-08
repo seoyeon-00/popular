@@ -23,6 +23,8 @@ const StoreList = ({ stores }: Props) => {
       ) : (
         <div className="nothing">
           <p>
+            😢
+            <br />
             해당 스토어가
             <br />
             존재하지 않습니다!
@@ -43,9 +45,9 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
 
-    height: 200px;
+    height: 50vh;
 
-    font-size: var(--font-large);
+    font-size: 25px;
     font-weight: var(--weight-semi-bold);
 
     line-height: 1.3;
