@@ -21,13 +21,12 @@ const Container = styled.header`
 
   padding: 20px;
 
-  border-bottom: 1px var(--color-light-gray) solid;
+  border-bottom: 1px #f7f7f7 solid;
 
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
 
   z-index: 999;
-  box-shadow: 0px 0px 22px -6px rgba(0, 0, 0, 0.4);
   transition: all 0.3s;
 
   &.hide {
@@ -85,7 +84,6 @@ const Container = styled.header`
 
       .logo {
         margin-right: 40px;
-
         font-size: 30px;
 
         color: var(--color-main);
@@ -102,7 +100,7 @@ const Container = styled.header`
 
         .links {
           display: flex;
-          gap: 30px;
+          gap: 40px;
           font-size: 16px;
 
           a {
@@ -111,6 +109,7 @@ const Container = styled.header`
             color: var(--color-light-black);
             background-color: transparent;
             font-weight: 500;
+            font-size: 15px;
             transform-origin: bottom center;
 
             &:hover {
@@ -139,7 +138,7 @@ const Container = styled.header`
 
   @media all and (max-width: 767px) {
     .logo {
-      width: 200px;
+      width: 150px;
       img {
         width: 100%;
       }

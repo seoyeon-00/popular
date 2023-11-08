@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   --color-sub: #a37edc;
   --color-pastel: #dcaaf8;
   --color-pastel2: rgb(249, 244, 253);
+  --color-pastel3: #f3eaff;
 
   --color-white: #ffffff;
   --color-black: #111111;
