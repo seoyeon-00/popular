@@ -10,15 +10,14 @@ const Container = styled.button`
 
   text-align: center;
 
-  background: #fff;
-  border: 2px solid var(--color-main);
+  background: linear-gradient(to right, #3882ea, #6d00c6);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
 
   z-index: 400;
-  color: var(--color-main);
-  font-size: 14px;
-  font-weight: 600;
+  color: var(--color-white);
+  font-size: 13px;
+  font-weight: 500;
 
   transform: translate(-50%, 0);
 
