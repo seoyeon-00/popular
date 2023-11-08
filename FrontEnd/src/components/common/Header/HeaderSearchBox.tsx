@@ -10,12 +10,12 @@ const Container = styled.div`
     width: 150px;
     height: 30px;
 
-    padding: 0 30px 0 10px;
+    padding: 0 30px 0 12px;
     outline: none;
 
     border-radius: 20px;
-    border: 1px solid var(--color-main);
-    background-color: var(--color-main);
+    border: 1px solid var(--color-pastel2);
+    background-color: var(--color-pastel2);
 
     transition: width 0.5s, transform 0.5s;
     transform-origin: right center;
@@ -27,16 +27,15 @@ const Container = styled.div`
       border: 1px solid var(--color-main);
 
       transform: scale(1.2);
-      color: var(--color-pastel);
-      font-size: 12px;
+      color: var(--color-sub);
       font-weight: 500;
     }
   }
 
   input::placeholder {
-    color: var(--color-pastel);
-    font-size: 12px;
-    font-weight: 500;
+    color: var(--color-sub);
+    font-size: 10px;
+    font-weight: 600;
   }
 
   svg {
@@ -44,7 +43,7 @@ const Container = styled.div`
     right: 5px;
     top: 0px;
     transform: scale(0.5);
-    fill: var(--color-pastel);
+    fill: var(--color-sub);
 
     &:hover {
       cursor: pointer;

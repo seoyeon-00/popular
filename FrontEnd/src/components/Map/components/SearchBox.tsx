@@ -13,13 +13,14 @@ const Container = styled.div`
   transform: translateX(-50%);
 
   input {
-    width: 300px;
-    height: 30px;
+    width: 350px;
+    height: 40px;
     border: none;
-    border-radius: 15px;
+    border-radius: 30px;
 
-    font-size: 20px;
+    font-size: 14px;
     text-align: center;
+    font-weight: 500;
 
     box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.39);
     -webkit-box-shadow: 0px 0px 26px 0px rgba(0, 0, 0, 0.39);
@@ -29,15 +30,16 @@ const Container = styled.div`
   ul,
   .blank {
     position: absolute;
-    top: 40px;
+    top: 47px;
 
     display: flex;
     flex-direction: column;
 
-    width: 300px;
+    width: 350px;
     gap: 10px;
     padding: 10px;
     background-color: #fff;
+    font-size: 13px;
 
     border-radius: 10px;
 
@@ -51,7 +53,7 @@ const Container = styled.div`
     background-color: #fff;
 
     font-weight: 500;
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .result-item:hover {
@@ -82,7 +84,7 @@ const SearchBox = ({ searchRef, map, setCenter }: Props) => {
 
   async function searchAddress(query: string) {
     //const apiKey = 'd0acc39482dfa41bbde29b60461a86ed'; // 카카오 개발자 웹사이트에서 발급한 API 키를 입력합니다.
-    const apiKey = '	4c9b66cd7500741bb8360b7e3401ddf1';
+    const apiKey = '4c9b66cd7500741bb8360b7e3401ddf1';
 
     const url = 'https://dapi.kakao.com/v2/local/search/address.json';
     const headers = { Authorization: `KakaoAK ${apiKey}` };
