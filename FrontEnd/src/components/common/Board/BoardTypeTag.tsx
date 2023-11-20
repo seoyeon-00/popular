@@ -26,7 +26,7 @@ const TagContainer = styled.div<{ color: string }>`
   justify-content: center;
   align-items: center;
 
-  width: 55px;
+  width: 65px;
 
   padding: 4px 0;
 
@@ -34,8 +34,8 @@ const TagContainer = styled.div<{ color: string }>`
   height: 22px;
 
   color: var(--color-white);
-  font-size: var(--font-micro);
-  font-weight: var(--weight-semi-bold);
+  font-size: 12px;
+  font-weight: 400;
 
   background-color: ${(props) => props.color};
 `;

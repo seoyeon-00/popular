@@ -24,7 +24,6 @@ const PostInfoWrap = styled.div`
   .board {
     width: fit-content;
     transform-origin: left;
-    transform: scale(1.5);
   }
 
   .feed-data {
@@ -44,13 +43,13 @@ const ColumnWrap = styled.div`
 const RowWrap = styled.div`
   display: flex;
   gap: 20px;
-  padding: 15px 0;
+  padding: 10px 0;
   border-bottom: 1px var(--color-light-gray) solid;
 `;
 
 const PostTitle = styled.h3`
   margin-bottom: 10px;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 500;
 `;
 const BottomInfo = styled.div`
@@ -80,13 +79,20 @@ const BottomInfo = styled.div`
 
       .nickname {
         color: #000;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 300;
 
+        .point-bold {
+          font-weight: 500;
+        }
+
         em {
-          color: #a0a0a0;
           font-size: 12px;
           font-weight: 500;
+          background-color: #333;
+          color: #eee;
+          padding: 2px 8px;
+          border-radius: 20px;
         }
       }
     }
@@ -124,7 +130,7 @@ const PostInfo = ({
                 <img src={profile ? profile : '/defaultProfile.svg'} className="profile-pic" />
                 <div className="info">
                   <p className="nickname">
-                    {nickName} <em>| {follower} Followers</em>
+                    <span className="point-bold">{nickName}</span> <em>{follower} Followers</em>
                   </p>
                   <p className="created">{`${dayjs(createdAt).format('YYYY-MM-DD HH:mm:ss')}`}</p>
                 </div>
