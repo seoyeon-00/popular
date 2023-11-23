@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import LikeIcon from '../../common/Icons/LikeIcon';
-import ReportIcon from '../../common/Icons/ReportIcon';
 import HeartIcon from '../../common/Icons/HeartIcon';
 import UnLikeIcon from '../../common/Icons/UnLikeIcon';
 
