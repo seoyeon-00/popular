@@ -5,11 +5,11 @@ import ConfirmModal from '../../common/Modals/ConfirmModal';
 const Button = styled.button<{ update: boolean }>`
   color: var(--color-white);
   border-radius: 8px;
-  width: 55px;
+  width: 50px;
   height: 35px;
-  font-size: var(--font-regular);
+  font-size: 13px;
   background-color: ${(props) => (props.update ? 'var(--color-main)' : 'var(--color-gray)')};
-  margin: 5px;
+  margin: 0px;
   cursor: pointer;
 `;
 
@@ -18,7 +18,7 @@ const ButtonWrap = styled.div`
   right: 0;
   display: flex;
   justify-content: flex-end;
-
+  gap: 4px;
   @media (max-width: 768px) {
     top: 85px;
   }

@@ -59,7 +59,7 @@ const LikesAndReports = ({
         }}
         className={checkLike ? 'active' : ''}
       >
-        {checkLike ? <HeartIcon fill={'var(--color-main)'} /> : <HeartIcon fill={'var(--color-gray)'} />}
+        {checkLike ? <HeartIcon fill={'#ff8787'} /> : <HeartIcon fill={'var(--color-gray)'} />}
         <NameWrap>좋아요 {likes}</NameWrap>
       </Button>
       <Button
@@ -68,7 +68,7 @@ const LikesAndReports = ({
         }}
         className={checkReport ? 'active' : ''}
       >
-        {checkReport ? <UnLikeIcon fill={'var(--color-main)'} /> : <UnLikeIcon fill={'var(--color-gray)'} />}
+        {checkReport ? <UnLikeIcon fill={'#c01010'} /> : <UnLikeIcon fill={'var(--color-gray)'} />}
         <NameWrap>싫어요 {reports}</NameWrap>
       </Button>
     </ButtonWrap>

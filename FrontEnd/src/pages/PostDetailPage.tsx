@@ -41,6 +41,13 @@ const RatingsWrap = styled.div`
   }
 `;
 
+const LineBottom = styled.div`
+  width: 100%;
+  height: 2px;
+  background-color: #f5f5f5;
+  margin: 50px 0px 12px;
+`;
+
 async function fetchData(
   postId = '',
   setPost: React.Dispatch<React.SetStateAction<Post | null>>,
@@ -134,6 +141,9 @@ const PostDetailPage = () => {
       <PostContent content={post ? post.content : ''}></PostContent>
       <FlexDiv>
         <LikesAndReportsContainer />
+      </FlexDiv>
+      <LineBottom />
+      <FlexDiv>
         <UpdateAndDeleteContainer post={post} />
       </FlexDiv>
       <CommentListContainer />
