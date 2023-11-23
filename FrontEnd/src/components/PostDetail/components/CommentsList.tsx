@@ -8,10 +8,13 @@ const CommentBox = styled.div`
 `;
 
 const Title = styled.h4`
-  font-size: var(--font-medium);
+  font-size: var(--font-regular);
   margin-bottom: 10px;
+  font-weight: var(--weight-regular);
+  letter-spacing: -0.5px;
   span {
-    color: var(--color-red);
+    color: var(--color-black);
+    font-weight: var(--weight-semi-bold);
   }
 `;
 
@@ -19,7 +22,7 @@ const CommentsList = ({ comments }: { comments: Comment[] | undefined }) => {
   return (
     <CommentBox>
       <Title>
-        Comment <span>{comments?.length}</span>
+        댓글 <span>{comments?.length}</span>
       </Title>
       <ul>
         {comments?.map((comment, index) => (

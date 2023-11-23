@@ -18,6 +18,7 @@ import { getComments } from '../api/CommentApi';
 import MetaTag from '../components/SEO/MetaTag';
 import { API_PATH } from '../constants/path';
 import { Link } from 'react-router-dom';
+import { Line } from '../components/Home/components/Line';
 
 const Container = styled.div`
   width: 100%;
@@ -38,6 +39,13 @@ const RatingsWrap = styled.div`
   span {
     margin-right: 5px;
   }
+`;
+
+const LineBottom = styled.div`
+  width: 100%;
+  height: 2px;
+  background-color: #f5f5f5;
+  margin: 50px 0px 12px;
 `;
 
 async function fetchData(
@@ -129,9 +137,13 @@ const PostDetailPage = () => {
           </Link>
         </StoreWrap>
       )}
+      <Line />
       <PostContent content={post ? post.content : ''}></PostContent>
       <FlexDiv>
         <LikesAndReportsContainer />
+      </FlexDiv>
+      <LineBottom />
+      <FlexDiv>
         <UpdateAndDeleteContainer post={post} />
       </FlexDiv>
       <CommentListContainer />
