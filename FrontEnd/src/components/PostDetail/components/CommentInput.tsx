@@ -3,14 +3,15 @@ import styled from 'styled-components';
 
 const CommentInputWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
   margin-top: 10px;
+  gap: 4px;
 `;
 
 const Input = styled.input`
-  border: 1px solid #987fc0;
-  width: 98%;
+  border: none;
+  background-color: #f2f1f1;
+  width: 90%;
   height: 50px;
   border-radius: 8px;
   margin-bottom: 5px;
@@ -20,8 +21,8 @@ const RegisterButton = styled.button`
   background-color: var(--color-main);
   color: var(--color-white);
   border-radius: 8px;
-  width: 30%;
-  height: 40px;
+  width: 10%;
+  height: 50px;
   cursor: pointer;
 `;
 

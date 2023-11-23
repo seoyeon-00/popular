@@ -18,6 +18,7 @@ import { getComments } from '../api/CommentApi';
 import MetaTag from '../components/SEO/MetaTag';
 import { API_PATH } from '../constants/path';
 import { Link } from 'react-router-dom';
+import { Line } from '../components/Home/components/Line';
 
 const Container = styled.div`
   width: 100%;
@@ -129,6 +130,7 @@ const PostDetailPage = () => {
           </Link>
         </StoreWrap>
       )}
+      <Line />
       <PostContent content={post ? post.content : ''}></PostContent>
       <FlexDiv>
         <LikesAndReportsContainer />

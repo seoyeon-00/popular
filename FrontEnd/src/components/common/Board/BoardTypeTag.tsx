@@ -26,16 +26,15 @@ const TagContainer = styled.div<{ color: string }>`
   justify-content: center;
   align-items: center;
 
-  width: 65px;
+  width: 60px;
 
-  padding: 4px 0;
-
+  padding: 2px 0;
   border-radius: 4px;
   height: 22px;
 
   color: var(--color-white);
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 10px;
+  font-weight: 500;
 
   background-color: ${(props) => props.color};
 `;

@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import LikeIcon from '../../common/Icons/LikeIcon';
 import ReportIcon from '../../common/Icons/ReportIcon';
+import HeartIcon from '../../common/Icons/HeartIcon';
+import UnLikeIcon from '../../common/Icons/UnLikeIcon';
 
 const NameWrap = styled.span`
   margin-top: 5px;
@@ -13,13 +15,13 @@ const Button = styled.button`
   background: none;
   align-items: center;
   font-size: var(--font-small);
-  font-weight: 600;
+  font-weight: 500;
+  font-size: 13px;
   color: #a7a7a7;
   transition: all 0.4s;
   cursor: pointer;
 
   &.active {
-    transform: scale(1.4);
     color: #161616;
   }
 
@@ -57,9 +59,8 @@ const LikesAndReports = ({
         }}
         className={checkLike ? 'active' : ''}
       >
-        <LikeIcon fill={checkLike ? 'var(--color-main)' : 'var(--color-gray)'} />
-        <NameWrap>좋아요</NameWrap>
-        <span>{likes}</span>
+        {checkLike ? <HeartIcon fill={'var(--color-main)'} /> : <HeartIcon fill={'var(--color-gray)'} />}
+        <NameWrap>좋아요 {likes}</NameWrap>
       </Button>
       <Button
         onClick={() => {
@@ -67,9 +68,8 @@ const LikesAndReports = ({
         }}
         className={checkReport ? 'active' : ''}
       >
-        <ReportIcon fill={checkReport ? 'var(--color-red)' : 'var(--color-gray)'} />
-        <NameWrap>싫어요</NameWrap>
-        <span>{reports}</span>
+        {checkReport ? <UnLikeIcon fill={'var(--color-main)'} /> : <UnLikeIcon fill={'var(--color-gray)'} />}
+        <NameWrap>싫어요 {reports}</NameWrap>
       </Button>
     </ButtonWrap>
   );
