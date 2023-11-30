@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PenIcon from '../../common/Icons/PenIcon';
 import { useNavigate } from 'react-router-dom';
 import { CLIENT_PATH } from '../../../constants/path';
 import { useState } from 'react';
@@ -47,7 +46,6 @@ const WriteButton = () => {
       }}
     >
       <span>작성하기</span>
-      {/* <PenIcon /> */}
       {isModalOpen && <LoginModal onClose={setIsModalOpen} />}
     </Button>
   );
