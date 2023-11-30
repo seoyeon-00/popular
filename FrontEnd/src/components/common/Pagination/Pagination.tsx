@@ -13,14 +13,13 @@ const PageList = styled.ul`
 
 const PageItem = styled.li<{ active: boolean }>`
   padding: 5px;
-  width: 25px;
-  line-height: 15px;
+  line-height: 13px;
   text-align: center;
   margin: 0 3px;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  font-size: 13px;
+  width: 25px;
+  height: 25px;
+  font-size: 12px;
   font-weight: 600;
 
   ${(props) =>
@@ -34,11 +33,11 @@ const PageItem = styled.li<{ active: boolean }>`
 
 const MovementButton = styled.button`
   color: var(--color-white);
-  background: #f9f2fe;
+  background: #f4f3f3;
   margin: 0 10px;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   border-radius: 50px;
 `;
 

@@ -1,49 +1,65 @@
 import styled from 'styled-components';
 
 const DateBoxContainer = styled.div`
-  display: flex;
   background-color: white;
   border: 1px solid #987fc0;
   border-radius: 8px;
-  padding: 10px;
+  padding: 17px 10px;
   top: 50px;
-  right: 0;
+  right: -30px;
   position: absolute;
   z-index: 10;
+`;
+
+const DateContent = styled.div`
+  margin-top: 5px;
+`;
+
+const DateBoxTitle = styled.div`
+  font-size: 14px;
+  font-weight: 500;
 `;
 
 const DateBoxWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 280px;
+  padding: 5px 3px;
 `;
 
 const DateBox = styled.div`
   display: flex;
+  margin-bottom: 5px;
 `;
 
 const DateName = styled.span`
+  width: 30%;
+  text-align: center;
   margin: auto;
+  font-size: 14px;
 `;
 
 const DateSelectCompleteButton = styled.button`
   background-color: var(--color-sub);
   color: var(--color-white);
   border: none;
-  border-radius: 8px;
-  height: 55px;
-  width: 50px;
+  border-radius: 5px;
+  padding: 5px 0px;
+
+  width: 100%;
   margin-top: auto;
-  margin-left: 10px;
   cursor: pointer;
 `;
 
 const DateInput = styled.input`
-  background: none;
+  width: 70%;
+  background: #efefef;
   border: none;
-  border-bottom: 1px solid var(--color-gray);
-  font-size: var(--font-medium);
+  font-size: var(--font-regular);
   font-weight: var(--weight-regular);
+  padding: 2px 7px;
+  border-radius: 50px;
+  text-align: center;
 `;
 
 const DateValidation = (
@@ -82,24 +98,27 @@ const FilterDateBox = ({
 }) => {
   return (
     <DateBoxContainer>
-      <DateBoxWrap>
-        <DateBox>
-          <DateName>Start</DateName>
-          <DateInput type="date" onChange={(e) => setStartDateTarget(e.target.value)} value={startDateTarget} />
-        </DateBox>
-        <DateBox>
-          <DateName>End</DateName>
-          <DateInput type="date" onChange={(e) => setEndDateTarget(e.target.value)} value={endDateTarget} />
-        </DateBox>
-      </DateBoxWrap>
-      <DateSelectCompleteButton
-        onClick={() => {
-          DateValidation(startDateTarget, endDateTarget, setStartDate, setEndDate, setFilterDurationUse);
-          setShow();
-        }}
-      >
-        완료
-      </DateSelectCompleteButton>
+      <DateBoxTitle>스토어 기간을 선택해주세요.</DateBoxTitle>
+      <DateContent>
+        <DateBoxWrap>
+          <DateBox>
+            <DateName>시작일</DateName>
+            <DateInput type="date" onChange={(e) => setStartDateTarget(e.target.value)} value={startDateTarget} />
+          </DateBox>
+          <DateBox>
+            <DateName>종료일</DateName>
+            <DateInput type="date" onChange={(e) => setEndDateTarget(e.target.value)} value={endDateTarget} />
+          </DateBox>
+        </DateBoxWrap>
+        <DateSelectCompleteButton
+          onClick={() => {
+            DateValidation(startDateTarget, endDateTarget, setStartDate, setEndDate, setFilterDurationUse);
+            setShow();
+          }}
+        >
+          완료
+        </DateSelectCompleteButton>
+      </DateContent>
     </DateBoxContainer>
   );
 };

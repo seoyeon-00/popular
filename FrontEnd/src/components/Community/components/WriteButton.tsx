@@ -10,7 +10,7 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 28%;
+  width: 15%;
   height: 39px;
   margin-left: 5px;
   background-color: var(--color-main);
@@ -46,8 +46,8 @@ const WriteButton = () => {
         else navigate(CLIENT_PATH.WRITE);
       }}
     >
-      <span>글쓰기</span>
-      <PenIcon />
+      <span>작성하기</span>
+      {/* <PenIcon /> */}
       {isModalOpen && <LoginModal onClose={setIsModalOpen} />}
     </Button>
   );
