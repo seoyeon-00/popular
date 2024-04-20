@@ -98,19 +98,22 @@ const PostListItemContainer = () => {
     return <></>;
   }
   return (
-    <PostList style={{ marginTop: 30 }}>
-      {isFetching ? (
-        <></>
-      ) : (
-        dividedPost[page - 1]?.map((post) => (
-          <li key={post._id}>
-            <Link to={CLIENT_PATH.POST.replace(':postId', post._id)}>
-              <PostItem post={post} />
-            </Link>
-          </li>
-        ))
-      )}
-    </PostList>
+    <>
+      <div>{dividedPost[page - 1] && dividedPost[page - 1].length}개의 게시글이 있습니다.</div>
+      <PostList style={{ marginTop: 30 }}>
+        {isFetching ? (
+          <></>
+        ) : (
+          dividedPost[page - 1]?.map((post) => (
+            <li key={post._id}>
+              <Link to={CLIENT_PATH.POST.replace(':postId', post._id)}>
+                <PostItem post={post} />
+              </Link>
+            </li>
+          ))
+        )}
+      </PostList>
+    </>
   );
 };
 

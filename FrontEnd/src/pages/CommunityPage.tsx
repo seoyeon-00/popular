@@ -10,9 +10,9 @@ import PaginationContainer from '../components/Community/containers/PaginationCo
 import FilterAndWriteButtonWrapContainer from '../components/Community/containers/FilterAndWriteWrapContainer';
 import MetaTag from '../components/SEO/MetaTag';
 import TopBanner from '../components/common/Banner/TopBanner';
+
 const Container = styled.div`
   width: 100%;
-  //height: 1200px;
 `;
 const CommunityPage = () => {
   return (
@@ -21,8 +21,9 @@ const CommunityPage = () => {
       <TopBanner
         title={'Community'}
         subText={'POPULAR 유저들과의 소통으로 즐거운 팝업 라이프! 스토어 경험을 공유해보세요.'}
-      />
-      <TabsContainer />
+      >
+        <TabsContainer />
+      </TopBanner>
       <div>
         <SearchInputContainer />
         <FilterAndWriteButtonWrapContainer>
