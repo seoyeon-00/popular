@@ -10,13 +10,14 @@ import { useAppSelector, useAppDispatch } from '../../../Hooks/useSelectorHooks'
 import filterFunc from '../../../utils/filterFunc';
 import PostItem from '../../common/Post/PostItem';
 import PostList from '../components/PostList';
+import styled from 'styled-components';
 
 const searchFilter = (posts: Post[], value: string) => {
   const newStores = posts.filter((post) => post.title.includes(value));
   return newStores;
 };
 
-const PostListItemContainer = () => {
+const PostListItemContainer = ({ children }: { children?: React.ReactNode }) => {
   const page = useAppSelector((state) => state.CommunitySlice.page.currPage);
   const searchValue = useAppSelector((state) => state.CommunitySlice.searchValue);
   const filterCategory = useAppSelector((state) => state.CommunitySlice.categoryFilter);
@@ -99,13 +100,16 @@ const PostListItemContainer = () => {
   }
   return (
     <>
-      <div>{dividedPost[page - 1] && dividedPost[page - 1].length}개의 게시글이 있습니다.</div>
+      <ListNumAndFilter>
+        <div className="text">{dividedPost[page - 1] && dividedPost[page - 1].length}개의 게시글이 있습니다.</div>
+        <div className="filter">{children}</div>
+      </ListNumAndFilter>
       <PostList style={{ marginTop: 30 }}>
         {isFetching ? (
           <></>
         ) : (
           dividedPost[page - 1]?.map((post) => (
-            <li key={post._id}>
+            <li key={post._id} style={{ width: '49%' }}>
               <Link to={CLIENT_PATH.POST.replace(':postId', post._id)}>
                 <PostItem post={post} />
               </Link>
@@ -118,3 +122,17 @@ const PostListItemContainer = () => {
 };
 
 export default PostListItemContainer;
+
+const ListNumAndFilter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .text {
+    width: 40%;
+  }
+
+  .filter {
+    width: 45%;
+  }
+`;

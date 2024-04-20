@@ -7,7 +7,7 @@ interface Props {
   post: Post;
 }
 
-const PostItem = ({ post }: Props) => {
+const PostItemVertical = ({ post }: Props) => {
   const findImage = post.content;
   const regex = /src="([^"]+)"/;
   const match = findImage.match(regex);
@@ -32,15 +32,6 @@ const PostItem = ({ post }: Props) => {
   };
   return (
     <Container key={post._id}>
-      <PostItemImage>
-        <div className="temporary-image">
-          {match ? (
-            <img src={post.images && post.images[0]} />
-          ) : (
-            <img alt={'임시이미지'} src={'https://i.esdrop.com/d/f/V3n7QYUh8O/jEFtCg0n1H.png'} />
-          )}
-        </div>
-      </PostItemImage>
       <ContainerInner>
         <PostItemInfo>
           <PostItemCategory>
@@ -54,7 +45,7 @@ const PostItem = ({ post }: Props) => {
               {typeof post.author === 'object' ? (
                 <>
                   <span>{post.author.nickname}</span>
-                  <span>좋아요 {post.likes.length}</span>
+                  <span>💜 {post.likes.length}</span>
                 </>
               ) : (
                 `💜 ${post.likes.length > 0 ? post.likes.length : '0'}`
@@ -62,19 +53,23 @@ const PostItem = ({ post }: Props) => {
             </div>
           </PostItemBottom>
         </PostItemInfo>
+        <PostItemImage>
+          <div className="temporary-image">{match ? <img src={post.images && post.images[0]} /> : null}</div>
+        </PostItemImage>
       </ContainerInner>
     </Container>
   );
 };
 
 const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
   box-sizing: border-box;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
   border-bottom: 1px solid var(--color-light-gray);
   transition: all 0.3s;
   box-shadow: 1px 1px 10px #eee;
+  margin-bottom: 10px;
   border-radius: 8px;
   animation: appear-post 1s forwards;
 
@@ -92,7 +87,8 @@ const Container = styled.div`
   &:hover {
     cursor: pointer;
     transform: translateY(-4px);
-    filter: brightness(1.2);
+    background-color: #fff;
+    filter: brightness(0.97);
   }
 
   @media all and (max-width: 767px) {
@@ -101,24 +97,28 @@ const Container = styled.div`
 `;
 
 const ContainerInner = styled.div`
-  padding: 25px 25px 40px 25px;
   width: 100%;
-  position: relative;
-  z-index: 5;
+  display: flex;
+  height: 80px;
 `;
 
 const PostItemImage = styled.div`
-  width: 100%;
+  width: 13%;
+  position: relative;
 
   .temporary-image {
+    position: absolute;
     width: 100%;
-    height: 200px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
 
     img {
       width: 100%;
-      height: 200px;
+      height: 80px;
       object-fit: cover;
-      filter: brightness(0.4);
     }
   }
   @media all and (max-width: 767px) {
@@ -127,7 +127,7 @@ const PostItemImage = styled.div`
 `;
 
 const PostItemInfo = styled.div`
-  width: 100%;
+  width: 87%;
 
   @media all and (max-width: 767px) {
     width: 72%;
@@ -163,7 +163,7 @@ const PostItemBottom = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 12px;
   color: var(--color-light-black);
 
   .info {
@@ -190,4 +190,4 @@ const PostItemContent = styled.div`
   }
 `;
 
-export default PostItem;
+export default PostItemVertical;

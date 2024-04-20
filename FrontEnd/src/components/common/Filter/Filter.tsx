@@ -4,17 +4,16 @@ const Select = styled.select<{ width: number }>`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background: url('/chevronDownIcon.png') no-repeat 95% 50%/10px auto;
+  background: url('/chevronDownIcon.png') no-repeat 90% 50%/10px auto;
   ${(props) => `width: ${props.width}%;`}
   height: 39px;
-  background-color: #f9f9f9;
   color: #666;
-  border: none;
+  border: 1px solid var(--color-gray);
   border-radius: 8px;
   font-size: 12px;
   margin-top: 10px;
-  text-align: center;
-  font-weight: 700;
+  padding-left: 15px;
+  font-weight: 500;
   cursor: pointer;
 
   + select {

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import PostItem from '../../common/Post/PostItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store';
+import PostItemVertical from '../../common/Post/PostItemVertical';
 
 const getFeeds = async (
   _limit: number,
@@ -114,7 +115,7 @@ const PostList = () => {
                     )
                   ) : (
                     <Link to={`/community/post/${post._id}`}>
-                      <PostItem post={post} />
+                      <PostItemVertical post={post} />
                     </Link>
                   )}
                 </PostItemContainer>

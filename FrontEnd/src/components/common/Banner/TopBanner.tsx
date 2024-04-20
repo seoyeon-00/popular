@@ -44,22 +44,12 @@ const TextBox = styled.div`
   }
 `;
 
-const TabContainer = styled.div`
-  width: 95%;
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  right: 0;
-  margin: 56px auto 0px;
-`;
-
 interface BannerProps {
   title: string;
   subText: string;
-  children: React.ReactNode;
 }
 
-const TopBanner = ({ title, subText, children }: BannerProps) => {
+const TopBanner = ({ title, subText }: BannerProps) => {
   return (
     <Container>
       <Background>
@@ -67,7 +57,6 @@ const TopBanner = ({ title, subText, children }: BannerProps) => {
           <p className="text-title">{title}</p>
           <p className="text-sub">{subText}</p>
         </TextBox>
-        <TabContainer>{children}</TabContainer>
       </Background>
     </Container>
   );
