@@ -4,7 +4,6 @@ import { CSSProperties, useEffect, useRef, useState } from 'react';
 import { Post } from '../../../types/post';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import PostItem from '../../common/Post/PostItem';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../store';
 import PostItemVertical from '../../common/Post/PostItemVertical';
