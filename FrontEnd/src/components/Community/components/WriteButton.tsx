@@ -9,7 +9,7 @@ const Button = styled.button`
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 15%;
+  width: 30%;
   height: 39px;
   margin-left: 5px;
   background-color: var(--color-main);
@@ -26,7 +26,6 @@ const Button = styled.button`
   }
 
   span {
-    margin-right: 10px;
     @media (max-width: 768px) {
       display: none;
     }

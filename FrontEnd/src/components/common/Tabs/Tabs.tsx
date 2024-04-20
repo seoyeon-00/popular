@@ -1,13 +1,15 @@
 import styled, { css } from 'styled-components';
 
 const Tab = styled.p<{ active: boolean }>`
-  text-align: center;
-  font-size: var(--font-regular);
   width: 100%;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: var(--font-small);
+  color: var(--color-light-black);
+  border: 1px solid var(--color-gray);
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.5s;
-  padding: 20px 0px;
-  color: var(--color-white);
 
   + p {
     margin-left: 4px;
@@ -21,9 +23,8 @@ const Tab = styled.p<{ active: boolean }>`
     props.active &&
     css`
       color: var(--color-light-black);
-      /* border-bottom: 3px solid var(--color-white); */
-      background-color: var(--color-white);
-      font-size: var(--font-regular);
+      border: 1px solid var(--color-gray);
+      font-size: var(--font-small);
       font-weight: 600;
 
       @media (max-width: 420px) {

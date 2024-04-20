@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-import SearchInputContainer from '../components/Community/containers/SearchInputContainer';
-
-import TabsContainer from '../components/Community/containers/TabsContainer';
 import FilterContainer from '../components/Community/containers/FilterContainer';
 import WriteButton from '../components/Community/components/WriteButton';
 import FilterInfoContainer from '../components/Community/containers/FilterInfoContainer';
@@ -10,6 +7,8 @@ import PaginationContainer from '../components/Community/containers/PaginationCo
 import FilterAndWriteButtonWrapContainer from '../components/Community/containers/FilterAndWriteWrapContainer';
 import MetaTag from '../components/SEO/MetaTag';
 import TopBanner from '../components/common/Banner/TopBanner';
+import SearchEndTabContainer from '../components/Community/containers/SearchEndTabContainer';
+import FilterAndPostItemListContainer from '../components/Community/containers/FilterAndPostItemListContainer';
 
 const Container = styled.div`
   width: 100%;
@@ -21,18 +20,9 @@ const CommunityPage = () => {
       <TopBanner
         title={'Community'}
         subText={'POPULAR 유저들과의 소통으로 즐거운 팝업 라이프! 스토어 경험을 공유해보세요.'}
-      >
-        <TabsContainer />
-      </TopBanner>
-      <div>
-        <SearchInputContainer />
-        <FilterAndWriteButtonWrapContainer>
-          <FilterContainer />
-          <WriteButton />
-        </FilterAndWriteButtonWrapContainer>
-        <FilterInfoContainer />
-      </div>
-      <PostListItemContainer />
+      />
+      <SearchEndTabContainer />
+      <FilterAndPostItemListContainer />
       <PaginationContainer />
     </Container>
   );

@@ -9,13 +9,14 @@ interface durationFilterValue {
 
 const Duration = styled.button`
   height: 39px;
-  background: url('/chevronDownIcon.png') no-repeat 95% 50%/10px auto;
-  background-color: #f9f9f9;
+  background: url('/chevronDownIcon.png') no-repeat 90% 50%/10px auto;
   color: #666;
+  border: 1px solid var(--color-gray);
   border-radius: 8px;
   font-size: 12px;
-  padding: 10px;
-  font-weight: 700;
+  text-align: left;
+  padding-left: 15px;
+  font-weight: 500;
   cursor: pointer;
 
   @media (max-width: 768px) {

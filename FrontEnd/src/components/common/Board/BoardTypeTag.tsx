@@ -8,9 +8,9 @@ interface boardMapType {
 }
 
 const boardMap = new Map<string, boardMapType>([
-  [BoardTypes.free, { name: '자유게시판', color: 'var(--color-tomato)' }],
-  [BoardTypes.gather, { name: '모집게시판', color: 'var(--color-main)' }],
-  [BoardTypes.review, { name: '후기게시판', color: 'var(--color-green)' }],
+  [BoardTypes.free, { name: '자유', color: '#e3d8ff' }],
+  [BoardTypes.gather, { name: '모집', color: '#e3d8ff' }],
+  [BoardTypes.review, { name: '후기', color: '#e3d8ff' }],
 ]);
 
 const BoardTypeTag = React.memo(({ boardType }: { boardType: BoardTypes }) => {
@@ -26,15 +26,13 @@ const TagContainer = styled.div<{ color: string }>`
   justify-content: center;
   align-items: center;
 
-  width: 60px;
+  width: 33px;
+  height: 30px;
+  border-radius: 40px;
 
-  padding: 2px 0;
-  border-radius: 4px;
-  height: 22px;
-
-  color: var(--color-white);
+  color: var(--color-sub);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 800;
 
   background-color: ${(props) => props.color};
 `;
