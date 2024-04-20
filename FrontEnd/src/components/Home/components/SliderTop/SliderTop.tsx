@@ -7,9 +7,9 @@ const SliderTop = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 10000,
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
@@ -96,15 +96,15 @@ const SlideContent = styled.div`
   overflow: hidden;
 
   &.slide-01 {
-    background-color: lemonchiffon;
+    background-color: #f5f5f5;
   }
 
   &.slide-02 {
-    background-color: #cae3eb;
+    background-color: #dbebf2;
   }
 
   &.slide-03 {
-    background-color: rgb(241 241 241);
+    background-color: #f1eef7;
   }
 
   @media all and (max-width: 767px) {
@@ -118,19 +118,20 @@ const TextBox = styled.div`
   top: 29%;
   left: 15%;
   z-index: 5;
+  color: #333;
 
   .innertext-1 {
-    font-size: 23px;
+    font-size: 18px;
   }
 
   .innertext-2 {
     margin-top: 7px;
-    font-size: 23px;
+    font-size: 24px;
     font-weight: var(--weight-semi-bold);
   }
 
   .innertext-3 {
-    margin-top: 20px;
+    margin-top: 28px;
     font-size: 18px;
     font-weight: 400;
     letter-spacing: -1px;
@@ -161,14 +162,13 @@ const InnerImage = styled.div`
   position: absolute;
 
   &.image-1 {
-    background: linear-gradient(to right, lemonchiffon, lemonchiffon 10%, transparent),
-      url('/images/main-back.jpeg') no-repeat;
+    background: linear-gradient(to right, #f5f5f5, #f5f5f5 10%, transparent), url('/images/main-back.jpeg') no-repeat;
     background-size: contain;
     background-position: center top;
     right: 0px;
-    opacity: 0.4;
+    opacity: 0.2;
     z-index: 3;
-    width: 400px;
+    width: 600px;
     height: 500px;
 
     @media all and (max-width: 767px) {
@@ -204,16 +204,15 @@ const InnerImage = styled.div`
   }
 
   &.image-3 {
-    background: linear-gradient(to right, rgb(241 241 241), rgb(241 241 241) 10%, transparent),
-      url('/images/main-back3.jpg') no-repeat;
+    background: linear-gradient(to right, #f1eef7, #f1eef7 10%, transparent), url('/images/main-back3.jpg') no-repeat;
     background-size: contain;
     background-position: center top;
     right: -14px;
     bottom: 0px;
-    opacity: 0.5;
+    opacity: 0.25;
     z-index: 3;
-    width: 500px;
-    height: 400px;
+    width: 700px;
+    height: 500px;
 
     @media all and (max-width: 767px) {
       opacity: 0.15;
